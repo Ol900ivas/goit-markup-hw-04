@@ -13,6 +13,7 @@
   --border-color: #eeeeee;
   --main-font: 'Roboto', sans-serif;
   --logo-font: 'Raleway', sans-serif;
+  --hero-background-color: #C4C4C4;
 }
 
 body {
@@ -55,7 +56,7 @@ img {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
+  /* display: flex; */
 }
 
 .section {
@@ -74,7 +75,9 @@ img {
 }
 
 .top > .container {
+  display: flex;
   align-items: center;
+  
 }
 
 .top-nav {
@@ -136,12 +139,32 @@ img {
   color: var(--accent-color);
 }
 
+.mail::before {
+  display: block;
+  content: '';
+  background-image: url(../images/1envelope.svg);
+  background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+    margin-right: 10px;
+    height: 16px;background-color: red;    
+}
+
+.phone::before {
+  background-image: url(../images/1smartphone.svg);
+}
 /* -----------------HERO--------------------- */
 
 .hero {
-  background-color: var(--dark-background-color);
   padding: 200px 0;
+  background-color: var(--hero-background-color);
   text-align: center;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 }
 
 .hero-title {
@@ -201,11 +224,40 @@ img {
 }
 
 .advantages-item {
-  width: calc((100%-3 * 30px) / 4);
+  width: calc((100%-3*30px) / 4);
 }
 
 .advantages-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.advantages-item::before {
+  display: block;
+  content: '';
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70px;
+  height: 120px;
+  margin-bottom: 30px;
+  background-color: var(--semi-light-background-color);
+  
+  
+}
+
+.advantages-item:nth-child(1)::before {
+  background-image: url(../images/antenna.svg);
+}
+
+.advantages-item:nth-child(2)::before {
+  background-image: url(../images/clock.svg);
+}
+  
+.advantages-item:nth-child(3)::before {
+  background-image: url(../images/diagram.svg);
+}
+
+.advantages-item:nth-child(4)::before {
+  background-image: url(../images/astronaut.svg);
 }
 
 .advantages-title {
@@ -292,6 +344,24 @@ img {
   line-height: 1.19;
 }
 
+/* -----------------CLIENTS-------------------- */
+
+.clients>.container {
+  display: block;
+}
+
+.clients-list {
+  display: flex;
+  gap: 30px;
+}
+
+.clients-item {
+  width: calc((100% - 5 * 30px) / 6);
+  height: 92px;
+  
+
+outline: 2px solid blue;
+}
 /* -----------------FOOTER-------------------- */
 
 .footer {
@@ -376,6 +446,10 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+
+.project > .item {
+  width: calc((100% - 30 * 2) / 3);
 }
 
 .project-caption {
